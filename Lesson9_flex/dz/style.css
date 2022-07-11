@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.btn {
+    text-transform: uppercase;
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    display: block;
+}
+
+
+
+.main-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.main-header__links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-header__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.main-header__link_active {
+    color: #999;
+    text-decoration: underline double;
+}
+
+.baner {
+    background-image: url('https://4brain.ru/blog/wp-content/uploads/2015/02/%D0%9A%D0%BE%D0%BD%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F.-%D0%BA%D0%B0%D0%BA-%D0%B1%D1%8B%D1%82%D1%8C-%D1%81%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D0%BE%D1%82%D0%BE%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC-%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-%D1%8D%D1%82%D0%BE-%D0%BD%D1%83%D0%B6%D0%BD%D0%BE.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.baner__title {
+    color: white;
+}
+
+.baner__subtitle {
+    color: white;
+    font-size: 24px;
+    border-width: bold;
+}
+
+.article {
+    background-color: rgb(230, 230, 230);
+    padding-top: 25px;
+}
+
+.article:last-of-type {
+    padding-bottom: 25px;
+}
+
+.article__title {
+    text-align: center;
+    font-size: 28px;
+    margin: 0;
+}
+
+.article__picture {
+    float: right;
+    width: 50%;
+    margin: 15px;
+    margin-left: 0;
+}
+
+.article p:last-child {
+    margin-bottom: 0;
+}
+
+.galery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.galery__item {
+    width: calc((100% - 40px) / 3);
+    aspect-ratio: 1 / 1;
+    background-color: blueviolet;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galery__item img {
+    height: 100%;
+}
+
+.article__btn {
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.carusel {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.carusel__item {
+    width: calc((100% - 60px) / 4);
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.carusel__picture {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carusel__item img {
+    height: 100%;
+}
+
+.carusel__description {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}

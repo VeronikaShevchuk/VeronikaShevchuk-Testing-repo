@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes rotation {
+            from {
+                transform: rotate(180deg);
+            }
+
+            to {
+                transform: rotate(420deg);
+            }
+        }
+
+        html,
+        body {
+            height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(28, 29, 30);
+        }
+
+        .clock {
+            height: 200px;
+            aspect-ratio: 1 / 1;
+            border: 2px solid aquamarine;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-point {
+            height: 5px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: aquamarine;
+            position: relative;
+        }
+
+        .hours, .minuts, .seconds {
+            background-color: aquamarine;
+            position: absolute;
+            top: 50%;
+            animation-name: rotation;
+            animation-timing-function: linear;
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
+            transform-origin: top;
+        }
+
+        .hours {
+            height: 50px;
+            width: 4px;
+            left: calc(50% - 2px);
+            animation-duration: 21600s;
+        }
+
+        .minuts {
+            height: 75px;
+            width: 2px;
+            left: calc(50% - 1px);
+            animation-duration: 360s;
+        }
+
+        .seconds {
+            height: 90px;
+            width: 2px;
+            left: calc(50% - 1px);
+            animation-duration: 60s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="center-point">
+            <div class="hours"></div>
+            <div class="minuts"></div>
+            <div class="seconds"></div>
+        </div>
+    </div>
+</body>
+
+</html>

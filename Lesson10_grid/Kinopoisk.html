@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинопоиск</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: GraphikKinopoisk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: 60px 1fr 100px;
+            background-color: rgb(56, 55, 55);
+            grid-template-areas:
+                'header'
+                'main'
+                'footer';
+        }
+
+        header,
+        footer {
+            background-color: rgb(78, 77, 77);
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .main-area__film {
+            border-radius: 10px;
+        }
+
+        .main-area__film img {
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+
+        }
+
+        .main-area__film img:hover {
+            transform: scale(1.1);
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            position: sticky;
+        }
+
+        .burger {
+            height: 15px;
+            width: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .burger .line {
+            width: 15px;
+            height: 3px;
+            background-color: rgb(212, 202, 202);
+            position: relative;
+        }
+
+        .line::before,
+        .line::after {
+            width: 15px;
+            height: 3px;
+            background-color: rgb(212, 202, 202);;
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        .line::before {
+            bottom: calc(100% + 13px)
+        }
+
+        .line::after {
+            top: calc(100% + 13px)
+        }
+
+        .header__text {
+            flex-basis: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .header__text .text {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        
+        .text:hover+.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            /* display: none; */
+            width: 100%;
+            background-color: rgb(78, 77, 77);
+            position: absolute;
+            top: 60px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-menu__list ul {
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding-left: 20px;
+        }
+
+        .dropdown-menu__list ul li a::before {
+            content: '\2730';
+            color: rgb(247, 246, 237);
+            font-size: 30px;
+            padding-right: 10px;
+        }
+
+        .dropdown-menu__list ul li a {
+            text-decoration: none;
+            color: rgb(191, 183, 183);
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        .dropdown-menu__list ul li a:hover {
+            color: white;
+        }
+
+
+        .header__menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 60%;
+        }
+
+        .header__menu ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .header__userinfo {
+            flex-basis: 20%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .userlogo {
+            padding-right: 20px;
+        }
+
+        .img__logo {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header__text">
+            <div>
+                <div class="burger">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="text">Кинопоиск</div>
+            <div class="dropdown-menu">
+                <div class="dropdown-menu__list">
+                    <ul>
+                        <li> <a href="#"> Главная</a> </li>
+                        <li> <a href="#"> Онлайн-кинотеатр</a></li>
+                        <li> <a href="#"> Фильмы</a></li>
+                        <li> <a href="#"> Сериалы</a></li>
+                        <li> <a href="#"> Билеты в кино</a></li>
+                        <li> <a href="#"> Медиа</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__menu">
+            <ul>
+                <li>Главное</li>
+                <li>Магазин</li>
+                <li>Моё</li>
+                <li>Телеканалы</li>
+                <li>Спорт</li>
+            </ul>
+        </div>
+        <div class="header__userinfo">
+            <div class="userlogo">
+                <a href="#">
+                    <img class="img__logo" src="—Pngtree—golden flash circle decoration_4386193.png" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-area">
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/200035/2a0000018105d97beb1d8864e46a5529e861/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/1531675/2a0000017d002c62d86f90683ed54db4b6e7/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/223007/2a000001810478c3bf2502bc0b9380c6bfa0/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/1648503/2a0000016ef588497eae80fac6d087c71a83/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/2419418/2a00000181bb981f2b332219e7b7a33a145b/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/224348/2a000001812a614659f292ac71afee1cd970/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/236744/2a0000018171990e4cf596f5544b91eae7c4/375x234"
+                alt="films"></div>
+        <div class="main-area__film"><img
+                src="https://avatars.mds.yandex.net/get-ott/1672343/2a0000017a456c3d040751b5020a183cbf14/375x234"
+                alt="films"></div>
+
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+</body>
+
+</html>

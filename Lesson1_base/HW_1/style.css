@@ -1,0 +1,130 @@
+.header {
+
+    text-align: center;
+    color: rgb(63, 39, 141);
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    
+}
+
+.h2 {
+    color: rgb(150, 157, 172);
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    padding-left: 23%;   
+
+}
+
+.span {
+    padding-left: 23%; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: dimgray;
+    font-weight:500;
+    font-stretch:condensed;
+    
+}
+.span1 {
+    padding-left: 23%; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: dimgray;
+    font-style: oblique;
+    
+}
+
+/* Стили для Card game */
+
+.cardblock {
+        
+    width: 300px;
+    margin: left;
+    height: 30px;
+}
+  
+
+.card {
+    float: left;    
+    height: 20px;
+    width: 30px;
+    margin-right: 3px;
+    text-align: center;
+    background-color: rgb(207, 211, 214);
+
+}
+.cardred {
+    float: left;    
+        height: 20px;
+        width: 30px;
+        margin-right: 3px;
+        text-align: center;
+        background-color: rgb(207, 211, 214);
+        color: rgb(148, 15, 15);
+    
+    }
+
+.player{
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+
+}
+
+.head{
+    text-align: center;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px; 
+}
+.h2head
+{
+    text-align: center;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px; 
+}
+.text
+{
+    margin-left: 150px;
+    margin-right: 150px;    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;    
+}
+
+    .italtext{
+        margin-left: 150px;
+        margin-right: 150px;    
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 12px;
+        font-style: oblique;
+    }
+.boldtext
+{
+    font-weight: bold; 
+    border-bottom: 1px dotted black;
+    }
+
+
+.txtteg{
+    color: crimson;
+    background-color: rgb(226, 226, 226);
+    border: 1px;
+    padding: 1px;
+}
+
+.code {
+    margin-left: 150px;
+    margin-right: 150px;    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;   
+    background-color: rgb(226, 226, 226);
+    border: 1px;
+    padding: 10px;
+    color: crimson;
+
+}
+

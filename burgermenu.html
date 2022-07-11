@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            min-height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-rows: 60px 1fr 100px;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'header'
+                'main'
+                'footer';
+        }
+
+        @media (min-width: 480px) {
+            body {
+                grid-template-columns: 35% 1fr;
+                grid-template-areas:
+                    'header header'
+                    'LSB main'
+                    'footer footer';
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                grid-template-columns: 20% 1fr 20%;
+                grid-template-areas:
+                    'header header header'
+                    'LSB main RSB'
+                    'footer footer footer';
+            }
+        }
+
+        header {
+            grid-area: header;
+            background-color: cadetblue;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav {
+            height: 0;
+            width: 100vw;
+            background-color: darkgoldenrod;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 100%;
+            transition: .3s;
+            transition-property: opacity height;
+            opacity: 0;
+        }
+
+        nav.open {
+            height: calc(100vh - 60px);
+            opacity: 1;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 36px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .burger {
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .burger .line {
+            width: 35px;
+            height: 3px;
+            background-color: black;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                position: static;
+                height: auto;
+                width: auto;
+                background: none;
+                opacity: 1;
+            }
+
+            .burger {
+                display: none;
+            }
+
+            nav ul {
+                flex-direction: row;
+                font-size: 18px;
+            }
+        }
+
+        .line::before,
+        .line::after {
+            width: 35px;
+            height: 3px;
+            background-color: black;
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        .line::before {
+            bottom: calc(100% + 13px)
+        }
+
+        .line::after {
+            top: calc(100% + 13px)
+        }
+
+        .LSB {
+            grid-area: LSB;
+            background-color: burlywood;
+        }
+
+        main {
+            grid-area: main;
+            background-color: rgb(41, 69, 120);
+        }
+
+        .RSB {
+            grid-area: RSB;
+            background-color: burlywood;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            logo
+        </div>
+        <nav>
+            <ul>
+                <li>LOREM</li>
+                <li>LOREM</li>
+                <li>LOREM</li>
+                <li>LOREM</li>
+            </ul>
+        </nav>
+        <div>
+            <div class="burger">
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+    <div class="LSB"></div>
+    <main></main>
+    <div class="RSB"></div>
+    <footer></footer>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('nav').classList.toggle('open')
+        })
+    </script>
+</body>
+
+</html>

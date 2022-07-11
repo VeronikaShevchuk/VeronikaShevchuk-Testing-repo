@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown_open .dropdown__open-btn, .dropdown__open-btn:focus {
+            border-color: red;
+        }
+
+        .dropdown_open .dropdown__items-list {
+            display: block;
+        }
+
+        .dropdown__open-btn {
+            width: 150px;
+            background: none;
+            border: 1px solid rgb(199, 199, 199);
+            border-radius: 2px;
+            padding: 6px 12px 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .dropdown:not(.dropdown_open) .dropdown__open-btn:hover {
+            border-color: gray;
+        }
+
+        .dropdown__items-list {
+            display: none;
+            border: 1px solid rgb(199, 199, 199);
+            border-radius: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px 15px;
+            box-shadow: 0 0 25px 0px rgba(0,0,0,0.2);
+            position: absolute;
+            background-color: #fff;
+            max-height: 150px;
+            overflow: auto;
+        }
+
+        .dropdown__item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dropdown__item input {
+            display: none;
+        }
+
+        .dropdown__checkbox {
+            display: inline-block;
+            height: 15px;
+            aspect-ratio: 1 / 1;
+            border: 1px solid gray;
+            border-radius: 2px;
+        }
+
+        .dropdown__checkbox_checked {
+            background-color: cornflowerblue;
+        }
+
+        .dropdown__mark {
+            display: none;
+        }
+
+        .dropdown__checkbox_checked .dropdown__mark {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://google.com" method="get">
+        <div class="dropdown dropdown_open">
+            <button class="dropdown__open-btn">
+                <span>number</span>
+                <span class="material-symbols-outlined">
+                    arrow_drop_down
+                </span>
+            </button>
+            <div class="dropdown__items-list">
+                <div class="dropdown__item">
+                    <span class="dropdown__checkbox dropdown__checkbox_checked">
+                        <input type="checkbox">
+                        <span class="dropdown__mark">v</span>
+                        <span class="label">lorem</span>
+                    </span>
+                    
+                </div>
+
+
+
+                <!-- <div class="dropdown__item">
+                    <input type="checkbox" id="2"><label for="2">2</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="3"><label for="3">3</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="4"><label for="4">4</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="5"><label for="5">5</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="6"><label for="6">6</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="7"><label for="7">7</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="8"><label for="8">8</label>
+                </div>
+                <div class="dropdown__item">
+                    <input type="checkbox" id="9"><label for="9">9</label>
+                </div> -->
+            </div>
+        </div>
+        <input type="submit" value="отправить">
+    </form>
+
+    <script>
+        document.querySelector('.dropdown__checkbox').addEventListener('click', (event) => {
+            event.target.classList.toggle('dropdown__checkbox_checked')
+        })
+    </script>
+</body>
+
+</html>

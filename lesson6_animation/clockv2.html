@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes rotation {
+            from {
+                transform: rotate(180deg);
+            }
+
+            to {
+                transform: rotate(540deg);
+            }
+        }
+
+        * {
+            user-select: none;
+        }
+        html,
+        body {
+            height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgb(28, 29, 30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clock {
+            height: 200px;
+            aspect-ratio: 1 / 1;
+            border: 2px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 1px blueviolet, 0 0 5px 1px blueviolet inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-point {
+            height: 3px;
+            aspect-ratio: 1 / 1;
+            background-color: blueviolet;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 10px blueviolet;
+            position: relative;
+        }
+
+        .hours,
+        .minuts,
+        .seconds {
+            width: 2px;
+            background-color: white;
+            border-radius: 50% 50% 0 0;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px 1px blueviolet;
+            position: absolute;
+            left: calc(50% - .5px);
+            animation-name: rotation;
+            animation-timing-function: linear;
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
+        }
+
+        .hours {
+            height: 40px;
+            top: calc(50% + 60px);
+            transform-origin: 50% -60px;
+            animation-duration: 216000s;
+            z-index: 1;
+        }
+
+        .minuts {
+            height: 70px;
+            top: calc(50% + 30px);
+            transform-origin: 50% -30px;
+            animation-duration: 3600s;
+            z-index: 2;
+        }
+
+        .seconds {
+            height: 90px;
+            top: calc(50% + 10px);
+            transform-origin: 50% -10px;
+            animation-duration: 60s;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="center-point">
+            <div class="hours"></div>
+            <div class="minuts"></div>
+            <div class="seconds"></div>
+        </div>
+    </div>
+</body>
+
+</html>

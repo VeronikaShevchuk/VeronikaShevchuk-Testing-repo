@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season</title>
+    <style>
+        body {
+            margin: 30px 60px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(9, 8, 8);
+        }
+
+        ol {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            
+
+        }
+
+        ul {
+            font-weight: 200;
+            list-style-type: none;
+            width: 150px;
+            height: 100%;
+            background-color: rgb(66, 63, 63);
+        }
+
+        #winter {
+            color: rgb(0, 0, 200);
+        }
+
+        #spring {
+            color: rgb(0, 190, 0);
+        }
+
+        #summer {
+            color: #ffd24c;
+        }
+
+        #autumn {
+            color: #d96c00;
+        }
+
+        #winter li::before {
+            content: '\2744';
+        }
+
+        #spring li::before {
+            content: '\1F33F';
+        }
+
+        #summer li::before {
+            content: '\1F33B';
+        }
+
+        #autumn li::before {
+            content: '\1F342';
+        }
+    </style>
+</head>
+
+<body>
+            <h2>Времена года</h2>
+        <ol>
+            <li id="winter">Зима
+                <ul>
+                    <li>Декабрь</li>
+                    <li>Январь</li>
+                    <li>Февраль</li>
+                </ul>
+            </li>
+            <li id="spring">Весна
+                <ul>
+                    <li>Март</li>
+                    <li>Апрель</li>
+                    <li>Май</li>
+                </ul>
+            </li>
+            <li id="summer">Лето
+                <ul>
+                    <li>Июнь</li>
+                    <li>Июль</li>
+                    <li>Август</li>
+                </ul>
+            </li>
+            <li id="autumn">Осень
+                <ul>
+                    <li>Сентябрь</li>
+                    <li>Октябрь</li>
+                    <li>Ноябрь</li>
+                </ul>
+            </li>
+        </ol>
+
+   
+
+</body>
+
+</html>

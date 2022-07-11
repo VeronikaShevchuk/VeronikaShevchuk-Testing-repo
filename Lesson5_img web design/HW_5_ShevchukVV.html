@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_5_ShevchukVV</title>
+    <style>
+        body {
+            margin-top: 100px;
+            background-color: white;
+        }
+
+        .container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .container2 {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .top {
+
+            height: 50px;
+            position: relative;
+        }
+
+        .top_logo {
+            width: 80px;
+            height: 50px;
+            margin: 0 2px 0 50px;
+        }
+
+        .top_text {
+            position: absolute;
+            bottom: 15px;
+            font-size: 20px;
+            font-family: "Lato";
+            color: rgb(45, 57, 80);
+        }
+
+        .banner {
+            height: 400px;
+            background-image: url(https://i.ibb.co/tDzM8pW/Image-banner.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner_content {
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            text-align: center;
+            font-family: "Lato", sans-serif;
+            color: white;
+        }
+
+        .banner_content_text {
+            font-size: 80px;
+            text-transform: uppercase;
+            margin: 20px 0 10px 0;
+        }
+
+        .banner_content hr {
+            background-color: rgb(21, 163, 249);
+            border: 1px solid rgb(21, 163, 249);
+            width: 350px;
+        }
+
+        .banner_content_text2 {
+            font-size: 14px;
+            margin: 20px 0 10px 0;
+        }
+
+        .banner_content_button {
+            width: 90px;
+            height: 25px;
+            background-color: rgb(21, 163, 249);
+            color: white;
+            margin: 10% 0 15% 38%;
+        }
+
+        .banner_content_button:hover {
+            background: none;
+            border: 1px solid rgb(21, 163, 249);
+            transition: all 14ms;
+        }
+
+        .banner_content_button a {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-size: 9px;
+        }
+
+        .banner_content_icon {
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+
+        }
+
+        .banner_content_icon:hover {
+            font-size: large;
+            text-shadow: 1px 1px 9px white;
+            transition: all 14ms;
+
+        }
+
+        .textbox {
+            margin: 50px 0 50px 0;
+            height: 150px;
+            align-items: center;
+        }
+
+        .textbox {
+            text-align: center;
+            font-family: "Lato", sans-serif;
+            color: rgb(45, 57, 80);
+        }
+
+        .textbox p {
+            color: rgb(153, 153, 153);
+        }
+
+        .iconbox {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .iconbox_box {
+            width: 200px;
+            height: 200px;
+            aspect-ratio: 1/1;
+            position: relative;
+            margin-bottom: 50px;
+
+        }
+
+        .iconbox_box_element {
+            width: 50px;
+            aspect-ratio: 1/1;
+            background-color: rgb(21, 163, 249);
+            position: inherit;
+            margin-left: 78px;
+        }
+
+        .iconbox_box h4,
+        .container2_title {
+            text-align: center;
+            color: rgb(45, 57, 80);
+        }
+
+        .iconbox_box p,
+        .textbox_text2 {
+            text-align: center;
+            color: rgb(153, 153, 153);
+
+        }
+
+        .container2_title {
+            margin-top: 80px;
+        }
+
+        .imgbox {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 220px 220px 220px;
+            grid-template-rows: 150px 150px;
+            gap: 10px;
+            justify-content: center;
+
+
+        }
+
+        .imgbox_field {
+            position: relative;
+        }
+
+        .imgbox_field img {
+
+            width: 220px;
+            height: 150px;
+            cursor: pointer;
+        }
+
+        .imgbox_field_mask {
+            width: 220px;
+            height: 150px;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background-color: rgba(45, 57, 80, 0.659);
+
+        }
+
+        .imgbox_field_mask:hover {
+            opacity: 1;
+            transition: linear 10ms;
+        }
+
+        .imgbox_field_mask a {
+            display: flex;
+            float: left;
+            text-decoration: none;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border: 1px solid white;
+          margin: 60px 0 0 75px;
+          font-size: 12px;
+
+        }
+        .imgbox_field_mask a:last-child {
+            margin-left: 20px;
+        }
+        .imgbox_field_mask a:hover{
+            text-shadow: 0px 3px 4px rgb(249, 246, 246);
+            transition: linear 10ms;
+        }
+        .footer{
+            background-image: url(https://i.ibb.co/VN9vBQ3/Layer-36.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color:rgb(58, 58, 69) ;
+            background-blend-mode: multiply;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <img class="top_logo"
+                src="data:image/png;base64,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"
+                alt="logo-Strict">
+            <span class="top_text">STRICT</span>
+        </div>
+        <div class="banner">
+            <div class="banner_content">
+                <p class="banner_content_text"> <b>STRICT</b></p>
+                <hr>
+                <p class="banner_content_text2">STRICT is a responsive theme with a a clean and minimal look.</p>
+                <div class="banner_content_button">
+                    <a href="#">Call to action</a>
+                </div>
+                <a href="#" class="banner_content_icon">&#8744;</a>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="textbox">
+                <h3>Simple & pure design.</h3>
+                <p class="textbox_text">Designers everywhere gush with admiration upon seeing a web design and exclaim
+                    "its
+                    beautiful, it's so clean!". There are a countless number of webdesign round-ups dedicated to 'clean'
+                    design and it is a term thrown around quite a bit in the web design community. It can be easy to
+                    spot a
+                    good example of clean design.</p>
+            </div>
+            <div class="iconbox">
+                <div class="iconbox_box">
+                    <div class="iconbox_box_element"></div>
+                    <h4>Optimized for all devices</h4>
+                    <p>STRICT has been designed to be fully
+                        responsive on all devices</p>
+                </div>
+                <div class="iconbox_box">
+                    <div class="iconbox_box_element"></div>
+                    <h4>Clean & Minimal Design</h4>
+                    <p>This multipurpose theme is especially created
+                        to be used for different projects.</p>
+                </div>
+                <div class="iconbox_box">
+                    <div class="iconbox_box_element"></div>
+                    <h4>Font Awesome Icon</h4>
+                    <p>This multipurpose theme is especially created
+                        to be used for different projects.</p>
+                </div>
+            </div>
+            <h3 class="container2_title">Showcase your work like a pro.</h3>
+            <p class="textbox_text2"> Contact me if you like my work</p>
+            <div class="imgbox">
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/X53mj8X/Layer-29.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/4Kw9n4y/Layer-31.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/rFQBmMS/Layer-32.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/XjrVGwp/Layer-33.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/3shjxmd/Layer-34.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+                <div class="imgbox_field">
+                    <img src="https://i.ibb.co/wsMZ3D4/Layer-35.png" alt="info img">
+                    <div class="imgbox_field_mask">
+                        <a href="#">&nbsp; &#x2706;</a>
+                        <a href="#">&nbsp; &#x2709;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <h3></h3>
+            <p></p>
+            <div class="connection">
+                <div class="connection_name"></div>
+                <div class="connection_adress"></div>
+                <div class="connection_message"></div>
+                <a href="#">Send</a>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

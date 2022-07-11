@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's talk about YOUR PROJECT!</title>
+    <style>
+        body {
+            margin-top: 100px;
+            background-color: white;
+        }
+
+        .fon_scroll {
+            margin: 40px 0 0 0;
+            /* width: 94%; */
+            height: 250px;
+            background-color: rgba(244, 51, 17, 0.71);
+            background-image: url("https://i.ibb.co/6YhKb62/pexels-pixabay-416405.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 40px 40px;
+            position: relative;
+            background-blend-mode: multiply;
+
+        }
+
+        .container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .head-text {
+            text-align: center;
+            font-family: 'Montserrat';
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #555;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            padding: 0 0 20px 0;
+            position: relative;
+        }
+
+        hr {
+            width: 80px;
+            align-items: center;
+            color: rgb(54, 54, 54);
+            font-style: inherit;
+        }
+
+        .mainbar {
+            position: relative;
+            overflow: hidden;
+            height: 40px;
+            margin: 30px 0;
+        }
+
+        .mainbar ul {
+            margin: 0;
+            padding: 4px;
+            font-family: 'Montserrat';
+            list-style: none;
+            position: relative;
+            left: 30%;
+            float: left;
+            height: 40px;
+        }
+
+        .mainbar ul li a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .mainbar ul li {
+            display: inline-block;
+            left: -50%;
+            margin: 0 10px;
+            height: 40px
+        }
+
+        .mainbar ul li a:hover {
+            text-decoration: underline;
+            color: rgba(244, 51, 17, 0.71);
+            transition: all 0.2s linear;
+        }
+
+        .mainbar ul li a:focus {
+            
+            color: rgba(244, 51, 17, 0.71);
+            transition: all 0.2s linear;
+        }
+
+        .img-block {
+            width: 260px;
+            height: 210px;
+            padding: 0;
+        }
+
+
+        main {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .container-img {
+            display: inline-block;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .container-img>.img-div {
+            float: left;
+            width: 31.32%;
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+        .container-img>.img-div:last-child {
+            margin-right: 0;
+        }
+        #imglast{
+            margin-right: 0;
+        }
+        #imgfirst {
+            margin-left: 18px;
+        }
+        .img-div {
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            cursor: default;
+            box-shadow: 1px, 1px, 2px white;
+        }
+
+        .img-div .mask {
+            width: 270px;
+            height: 210px;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .img-div h2 {
+            text-transform: uppercase;
+            color: white;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            font-family: Ralewey, serif;
+            /* padding: 10px; */
+            margin: 40px 0 0 0;
+        }
+
+        .img-div p {
+            font-style: italic;
+            position: relative;
+            color: white;
+            padding: 0 20px 0;
+            text-align: center;
+        }
+
+        .img-div a.info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 10px;
+            background-color: white;
+            color: rgba(244, 51, 17, 0.71);
+            font-size: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 0.25px rgba(244, 51, 17, 0.71);
+            width: 70px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .img-div a.info:hover {
+            box-shadow: 0 0 5px white;
+        }
+
+        .img-div-first img {
+            transition: all 0.2s linear;
+            width: 260px;
+            height: 210px;
+        }
+
+        .img-div-first .mask {
+            opacity: 0;
+            background-color: rgba(244, 51, 17, 0.71);
+            transition: all 1.0s ease-in-out;
+
+        }
+
+        .img-div-first h2 {
+            transform: translateY(-100px);
+            opacity: 0;
+            font-family: Raleway, serif;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .img-div-first p {
+            transform: translateY(100px);
+            opacity: 0;
+            font-family: Raleway, serif;
+            transition: all 0.2s linear;
+        }
+
+        .img-div-first a.info {
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+
+        .img-div-first:hover .mask {
+            opacity: 1;
+        }
+
+        .img-div-first:hover h2,
+        .img-div-first:hover p,
+        .img-div-first:hover a.info {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+
+        .img-div-first:hover p {
+            transition-delay: 0.1s;
+        }
+
+        .img-div-first:hover a.info {
+            transition-delay: 0.2s;
+        }
+
+        .bacground-img {
+            margin: 40px 0 0 0;
+            width: 94%;
+            height: 250px;
+            background-color: #555;
+        }
+
+        .fon_scroll :first-child {
+            color: white;
+            font-family: 'Montserrat';
+            position: absolute;
+            text-align: center;
+            top: 50px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 210px;
+        }
+
+        .fon_scroll #p {
+            color: white;
+            font-family: 'Montserrat';
+            position: absolute;
+            text-align: center;
+            top: 150px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 210px;
+        }
+
+        .fon_scroll a {
+            color: white;
+            font-family: 'Montserrat';
+            position: absolute;
+            text-align: center;
+            top: 100px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: inline-block;
+            text-decoration: none;
+            padding: 7px 10px;
+            background-color: white;
+            color: rgba(244, 51, 17, 0.71);
+            font-size: 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 0.25px rgba(244, 51, 17, 0.71);
+            width: 70px;
+            height: 20px;
+            text-align: center;
+            /* width: 600px;
+            height: 210px; */
+        }
+
+        .h2 {
+            margin-top: 50px;
+            text-align: center;
+            font-family: 'Montserrat';
+            color: #555;
+        }
+
+        .h4 {
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Montserrat';
+            color: #555;
+        }
+
+        .art-img {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .article {
+            padding: 30px;
+        }
+
+        .info-art {
+            float: right;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .info-art:hover {
+            color: rgba(244, 51, 17, 0.71);
+            transition: all 0.2s linear;
+        }
+
+
+
+        .article h2:hover {
+            color: rgba(244, 51, 17, 0.71);
+            transition: all 0.2s linear;
+        }
+
+        .article h4:hover {
+            color: rgba(244, 51, 17, 0.71);
+            transition: all 0.2s linear;
+        }
+        .footer {
+            height: 250px;
+            background-color: rgba(244, 51, 17, 0.71);
+            
+        }
+        .textfoot {
+            color: white;
+            font-family: 'Montserrat';
+            position:absolute;
+            text-align: center;
+            margin: 100px 0 0 50%; 
+                   }
+       
+      
+      
+        .footer {
+            color: white;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h2 class="head-text">latest works</h2>
+            <hr>
+            <div class="mainbar">
+                <ul>
+                    <li> <a href="#" class="mainbar-info">All</a> </li>
+                    <li> <a href="#" class="mainbar-info">Branding</a> </li>
+                    <li> <a href="#" class="mainbar-info">Design</a> </li>
+                    <li> <a href="#" class="mainbar-info">Development</a> </li>
+                    <li> <a href="#" class="mainbar-info">Strategy</a> </li>
+                </ul>
+            </div>
+
+        </header>
+    </div>
+
+    <main>
+        <div class="container-img">
+            <div class="img-div img-div-first" id="imgfirst">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/pexels-dominika-roseclay-1089842.jpg"
+                    alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/jess-bailey-ycTvvg1mPU4-unsplash.jpg"
+                    alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first" id="imglast">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/laptop-2559707_1920.jpg" alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first" id="imgfirst">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/jess-bailey-PWxsExxrf5g-unsplash.jpg"
+                    alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/pexels-adrienne-andersen-2237805.jpg"
+                    alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first" id="imglast">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/samantha-gades-BlIhVfXbi9s-unsplash.jpg"
+                    alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first" id="imgfirst">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/pexels-fallon-michael-3551711.jpg" alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/stil-AVWmtS-qK3Y-unsplash.jpg" alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+
+            <div class="img-div img-div-first">
+                <img class="img-block"
+                    src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/pexels-daria-shevtsova-705675.jpg" alt="">
+                <div class="mask">
+                    <h2>Hair Dresser</h2>
+                    <p>Branding</p>
+                    <a href="#" class="info">view &nbsp; &gt;</a>
+                </div>
+            </div>
+        </div>
+        <div class="fon_scroll">
+            <p>Do you like OUR WORK so far?</p>
+            <p id="p">Let's talk about YOUR PROJECT!</p>
+            <a href="#" class="info">GET IN TOUCH</a>
+
+        </div>
+        <h2 class="h2">RESENT BLOG POSTS</h2>
+        <hr>
+        <h4 class="h4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, ratione.</h4>
+        <div class="article">
+            <img class="art-img"
+                src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/stil-AVWmtS-qK3Y-unsplash.jpg" alt="">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h4>Lorem ipsum dolor sit.</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repellat quidem atque ipsam
+                    fuga
+                    laboriosam rem, obcaecati fugit. Dicta nihil asperiores animi amet ipsam tenetur minus nostrum
+                    quaerat
+                    quasi sequi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repellat quidem
+                    atque
+                    ipsam fuga
+                    laboriosam rem, obcaecati fugit. Dicta nihil asperiores animi amet</p>
+                <a href="#" class="info-art">READ MORE</a>
+        </div>
+        <div class="article 2">
+            <img class="art-img"
+                src="https://lebedeva-alena.ru/wp-content/uploads/2020/11/stil-AVWmtS-qK3Y-unsplash.jpg" alt="">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h4>Lorem ipsum dolor sit.</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repellat quidem atque ipsam
+                    fuga
+                    laboriosam rem, obcaecati fugit. Dicta nihil asperiores animi amet ipsam tenetur minus nostrum
+                    quaerat
+                    quasi sequi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo repellat quidem
+                    atque
+                    ipsam fuga
+                    laboriosam rem, obcaecati fugit. Dicta nihil asperiores animi amet</p>
+                <a href="#" class="info-art">READ MORE</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+                     <p class="textfoot">&copy; 2022 STARTUP, DESIGNED BY SHAPEDTHEME</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
